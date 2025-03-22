@@ -8,6 +8,9 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// For Vercel, handle different working directory
+const cwd = process.env.VITE_CWD || '';
+
 export default defineConfig({
   plugins: [
     react(),
@@ -28,7 +31,7 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "shared"),
     },
   },
-  root: path.resolve(__dirname, "client"),
+  root: path.resolve(__dirname, cwd || "client"),
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
