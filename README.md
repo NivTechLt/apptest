@@ -16,6 +16,7 @@ FitTrack is a comprehensive fitness tracking web application designed to help us
 8. [Admin Dashboard](#admin-dashboard)
 9. [Getting Started](#getting-started)
 10. [Testing](#testing)
+11. [Deploying to Vercel](#deploying-to-vercel)
 
 ## Tech Stack
 
@@ -207,6 +208,34 @@ The admin dashboard provides comprehensive management capabilities:
 - Unit tests: `npm test`
 - Integration tests: `npm run test:integration`
 - E2E tests: `npm run test:e2e`
+
+## Deploying to Vercel
+
+To deploy this application to Vercel, follow these steps:
+
+1. **Fork or Clone this Repository**
+   Make sure you have the repository on your own GitHub account.
+
+2. **Connect to Vercel**
+   - Go to [Vercel](https://vercel.com) and sign in with your GitHub account
+   - Create a new project and import your repository
+   - Select "Other" as the framework preset
+
+3. **Configure Environment Variables**
+   Add all the required environment variables from the `.env.example` file to your Vercel project:
+   - `DATABASE_URL`: Connection string for your PostgreSQL database (use Neon, Supabase, or other Postgres providers)
+   - `SESSION_SECRET`: A secure random string for session encryption
+   - Other variables needed for your specific configuration
+
+4. **Deploy**
+   - Click "Deploy" and wait for the build to complete
+   - Your application will be available at the provided URL
+
+5. **Verify Deployment**
+   - Make sure your API routes work correctly
+   - Test user authentication and other key features
+
+The application uses Vercel's serverless functions for the backend API and static hosting for the frontend.
 
 ## License
 
