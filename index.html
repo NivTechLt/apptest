@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTrack - Loading</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f8fa;
+      flex-direction: column;
+    }
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #10b981;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    h1 {
+      color: #111827;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    p {
+      color: #6b7280;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div class="spinner"></div>
+    <h1>FitTrack</h1>
+    <p>Loading your fitness dashboard...</p>
+  </div>
+  <script>
+    // Redirect to the correct location if needed
+    setTimeout(() => {
+      const path = window.location.pathname;
+      if (path === '/' || path === '/index.html') {
+        window.location.href = '/';
+      }
+    }, 1500);
+  </script>
+</body>
+</html> 
